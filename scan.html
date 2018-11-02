@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+    <div id="app">123123123</div>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+//  if (window.plus) {
+//	  plusReady();
+//	  // alert(window.plus)
+//	} else {
+//	  document.addEventListener("ready", plusReady, false);
+//	}
+	mui.plusReady(function() {
+	  var ws = plus.webview.currentWebview(); //pw回车可输出plus.webview
+	  // ... code
+//	   alert('这是ready')
+	   mui.alert(JSON.stringify(window.plus))
+	})
+    </script>
+</body>
+</html>

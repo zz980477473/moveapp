@@ -209,7 +209,8 @@
 					"css/mui.css"
 				],
 				"refer": [
-					"list.html"
+					"list.html",
+					"scan.html"
 				],
 				"priority": 0
 			},
@@ -230,6 +231,14 @@
 					"js/mui.js",
 					"css/mui.css",
 					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"scan.html": {
+				"resources": [
+					"js/mui.js",
+					"css/mui.css"
 				],
 				"refer": [],
 				"priority": 0

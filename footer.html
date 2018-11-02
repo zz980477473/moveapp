@@ -8,7 +8,7 @@
 </head>
 <body>
 	<nav class="mui-bar mui-bar-tab">
-		<a class="mui-tab-item mui-active">
+		<a class="mui-tab-item mui-active" id="home">
 			<span class="mui-icon mui-icon-home"></span>
 			<span class="mui-tab-label">首页</span>
 		</a>
@@ -16,7 +16,7 @@
 			<span class="mui-icon mui-icon-phone"></span>
 			<span class="mui-tab-label">列表</span>
 		</a>
-		<a class="mui-tab-item">
+		<a class="mui-tab-item" id="scan">
 			<span class="mui-icon mui-icon-email"></span>
 			<span class="mui-tab-label">邮件</span>
 		</a>
@@ -27,10 +27,22 @@
 	</nav>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    mui.init()
+    mui.init({
+      beforeback: function(){
+		//获得列表界面的webview
+		var list = plus.webview.getWebviewById('index');
+		//触发列表界面的自定义事件（refresh）,从而进行数据刷新
+		mui.fire(list,'refresh');
+		console.log('fs')
+		//返回true，继续页面关闭逻辑
+		return true;
+	  }
+    })
     mui.plusReady(function() {
+    	var that = this
     	console.log('加载完成123123')
     	mui('.mui-bar').on('tap','#list', function() {
+    		console.log(111)
     	  mui.openWindow({
     	  	url:'list.html',
     	  	id: 'list',
@@ -51,6 +63,41 @@
 		    }
     	  })
     	})
+	    mui('.mui-bar').on('tap', '#scan', function(){
+	    	mui.openWindow({
+	    		url: 'scan.html',
+	    		id: 'sacn',
+	    		styles:{
+	    			top:0,
+	    			bottom: '50px'
+	    		}
+	    	})
+	    })
+	    mui('.mui-bar').on('tap', '#home', function(){
+	    	that.beforeback
+	    	mui.openWindow({
+	    		url: 'index.html',
+	    		id: 'index',
+	    		styles:{
+	    			top: 0,
+	    			buttom: 0
+	    		},
+	    		show:{
+			      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+			      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
+			      duration:300//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			    },
+			    waiting:{
+			      autoShow:true,//自动显示等待框，默认为true
+			      title:'正在加载...',//等待对话框上显示的提示内容
+			      options:{
+//			        width:waiting-dialog-widht,//等待框背景区域宽度，默认根据内容自动计算合适宽度
+//			        height:waiting-dialog-height,//等待框背景区域高度，默认根据内容自动计算合适高度
+//			        ......
+			      }
+			    }
+	    	})
+	    })
     })
     </script>
 </body>
