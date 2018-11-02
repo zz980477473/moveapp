@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item list" id="list">
+			<span class="mui-icon mui-icon-phone"></span>
+			<span class="mui-tab-label">列表</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-icon mui-icon-email"></span>
+			<span class="mui-tab-label">邮件</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-icon mui-icon-gear"></span>
+			<span class="mui-tab-label">设置</span>
+		</a>
+	</nav>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    mui.plusReady(function() {
+    	console.log('加载完成123123')
+    	mui('.mui-bar').on('tap','#list', function() {
+    	  mui.openWindow({
+    	  	url:'list.html',
+    	  	id: 'list',
+    	  	styles:{
+    	  	  top:'0px',
+    	  	  bottom:'50px'
+    	  	},
+    	  	show:{
+		      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+		      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
+		      duration:200//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+		    },
+		    waiting:{
+		      autoShow:true,//自动显示等待框，默认为true
+		      title:'正在加载...',//等待对话框上显示的提示内容
+		      options:{
+		      }
+		    }
+    	  })
+    	})
+    })
+    </script>
+</body>
+</html>
