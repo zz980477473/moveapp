@@ -206,11 +206,13 @@
 				"resources": [
 					"fonts/mui.ttf",
 					"js/mui.js",
-					"css/mui.css"
+					"css/mui.css",
+					"index.html"
 				],
 				"refer": [
 					"list.html",
-					"scan.html"
+					"scan.html",
+					"d.html"
 				],
 				"priority": 0
 			},
@@ -236,6 +238,22 @@
 				"priority": 0
 			},
 			"scan.html": {
+				"resources": [
+					"js/mui.js",
+					"css/mui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"d.html": {
+				"resources": [
+					"js/mui.js",
+					"css/mui.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"a.html": {
 				"resources": [
 					"js/mui.js",
 					"css/mui.css"

@@ -1,49 +1,64 @@
 {
-	"index.html": {
-		"resources": [
-			"fonts/mui.ttf",
-			"js/mui.js",
-			"css/mui.css",
-			"footer.html"
-		],
-		"refer": [
-			"footer.html"
-		]
-	},
-	"footer.html": {
-		"resources": [
-			"fonts/mui.ttf",
-			"js/mui.js",
-			"css/mui.css"
-		],
-		"refer": [
-			"list.html",
-			"scan.html"
-		]
-	},
-	"list.html": {
-		"resources": [
-			"js/mui.js",
-			"css/mui.css",
-			"footer.html",
-			"js/list.js"
-		],
-		"refer": [
-			"footer.html",
-			"detail.html"
-		]
-	},
-	"detail.html": {
-		"resources": [
-			"js/mui.js",
-			"css/mui.css",
-			"fonts/mui.ttf"
-		]
-	},
-	"scan.html": {
-		"resources": [
-			"js/mui.js",
-			"css/mui.css"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.js",
+      "css/mui.css",
+      "footer.html"
+    ],
+    "refer": [
+      "footer.html"
+    ]
+  },
+  "footer.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.js",
+      "css/mui.css",
+      "index.html"
+    ],
+    "refer": [
+      "list.html",
+      "scan.html",
+      "index.html",
+      "d.html"
+    ]
+  },
+  "list.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.css",
+      "footer.html",
+      "js/list.js"
+    ],
+    "refer": [
+      "footer.html",
+      "detail.html"
+    ]
+  },
+  "detail.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.css",
+      "fonts/mui.ttf"
+    ]
+  },
+  "scan.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.css"
+    ]
+  },
+  "d.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.css"
+    ]
+  },
+  "a.html": {
+    "resources": [
+      "js/mui.js",
+      "css/mui.css"
+    ]
+  }
 }

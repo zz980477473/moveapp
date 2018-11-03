@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/mui.css"/>
 </head>
 <body>
-	<nav class="mui-bar mui-bar-tab">
+	<!--<nav class="mui-bar mui-bar-tab">
 		<a class="mui-tab-item mui-active" id="home">
 			<span class="mui-icon mui-icon-home"></span>
 			<span class="mui-tab-label">首页</span>
@@ -24,81 +24,127 @@
 			<span class="mui-icon mui-icon-gear"></span>
 			<span class="mui-tab-label">设置</span>
 		</a>
-	</nav>
+	</nav>-->
+	<!--
+		下面这是网上的方法
+	-->
+	<nav class="mui-bar mui-bar-tab">
+        <a id="defaultTab" class="mui-tab-item mui-active" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="list.html">
+            <span class="mui-icon mui-icon-email"></span>
+            <span class="mui-tab-label">消息</span>
+        </a>
+        <a class="mui-tab-item" href="scan.html">
+            <span class="mui-icon mui-icon-contact"></span>
+            <span class="mui-tab-label">通讯录</span>
+        </a>
+        <a class="mui-tab-item" href="d.html">
+            <span class="mui-icon mui-icon-gear"></span>
+            <span class="mui-tab-label">设置</span>
+        </a>
+    </nav>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    mui.init({
-      beforeback: function(){
-		//获得列表界面的webview
-		var list = plus.webview.getWebviewById('index');
-		//触发列表界面的自定义事件（refresh）,从而进行数据刷新
-		mui.fire(list,'refresh');
-		console.log('fs')
-		//返回true，继续页面关闭逻辑
-		return true;
-	  }
-    })
-    mui.plusReady(function() {
-    	var that = this
-    	console.log('加载完成123123')
-    	mui('.mui-bar').on('tap','#list', function() {
-    		console.log(111)
-    	  mui.openWindow({
-    	  	url:'list.html',
-    	  	id: 'list',
-    	  	styles:{
-    	  	  top:'0px',
-    	  	  bottom:'50px'
-    	  	},
-    	  	show:{
-		      autoShow:true,//页面loaded事件发生后自动显示，默认为true
-		      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
-		      duration:200//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
-		    },
-		    waiting:{
-		      autoShow:true,//自动显示等待框，默认为true
-		      title:'正在加载...',//等待对话框上显示的提示内容
-		      options:{
-		      }
-		    }
-    	  })
-    	})
-	    mui('.mui-bar').on('tap', '#scan', function(){
-	    	mui.openWindow({
-	    		url: 'scan.html',
-	    		id: 'sacn',
-	    		styles:{
-	    			top:0,
-	    			bottom: '50px'
-	    		}
-	    	})
-	    })
-	    mui('.mui-bar').on('tap', '#home', function(){
-	    	that.beforeback
-	    	mui.openWindow({
-	    		url: 'index.html',
-	    		id: 'index',
-	    		styles:{
-	    			top: 0,
-	    			buttom: 0
-	    		},
-	    		show:{
-			      autoShow:true,//页面loaded事件发生后自动显示，默认为true
-			      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
-			      duration:300//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
-			    },
-			    waiting:{
-			      autoShow:true,//自动显示等待框，默认为true
-			      title:'正在加载...',//等待对话框上显示的提示内容
-			      options:{
-//			        width:waiting-dialog-widht,//等待框背景区域宽度，默认根据内容自动计算合适宽度
-//			        height:waiting-dialog-height,//等待框背景区域高度，默认根据内容自动计算合适高度
-//			        ......
-			      }
-			    }
-	    	})
-	    })
-    })
-    </script>
+    mui.init()
+//  mui.plusReady(function() {
+//  	var that = this
+//  	console.log('加载完成123123')
+//  	mui('.mui-bar').on('tap','#list', function() {
+//  		console.log(111)
+//  	  mui.openWindow({
+//  	  	url:'list.html',
+//  	  	id: 'list',
+//  	  	styles:{
+//  	  	  top:'0px',
+//  	  	  bottom:'50px'
+//  	  	},
+//  	  	show:{
+//		      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+//		      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
+//		      duration:200//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+//		    },
+//		    waiting:{
+//		      autoShow:true,//自动显示等待框，默认为true
+//		      title:'正在加载...',//等待对话框上显示的提示内容
+//		      options:{
+//		      }
+//		    }
+//  	  })
+//  	})
+//	    mui('.mui-bar').on('tap', '#scan', function(){
+//	    	mui.openWindow({
+//	    		url: 'scan.html',
+//	    		id: 'sacn',
+//	    		styles:{
+//	    			top:0,
+//	    			bottom: '50px'
+//	    		}
+//	    	})
+//	    })
+//	    mui('.mui-bar').on('tap', '#home', function(){
+//	    	that.beforeback
+//	    	mui.openWindow({
+//	    		url: 'index.html',
+//	    		id: 'index',
+//	    		styles:{
+//	    			top: 0,
+//	    			buttom: 0
+//	    		},
+//	    		show:{
+//			      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+//			      aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
+//			      duration:300//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+//			    },
+//			    waiting:{
+//			      autoShow:true,//自动显示等待框，默认为true
+//			      title:'正在加载...',//等待对话框上显示的提示内容
+//			      options:{
+////			        width:waiting-dialog-widht,//等待框背景区域宽度，默认根据内容自动计算合适宽度
+////			        height:waiting-dialog-height,//等待框背景区域高度，默认根据内容自动计算合适高度
+////			        ......
+//			      }
+//			    }
+//	    	})
+//	    })
+//  })
+
+
+/*
+ 百度大法解决底部切换问题
+ * */
+mui.plusReady(function(){    
+	var pages = ["index.html","list.html","scan.html","d.html"];    
+	var arr = document.getElementsByClassName("mui-tab-item")
+	var styles = {
+        top:"0px",
+        bottom:"50px"
+    }    
+    var pageArr = [];    
+    var slef = plus.webview.currentWebview();    
+    for(var i=0; i<arr.length; i++){        
+    	// 有几个选项卡，需要创建几个子页面
+        var page = plus.webview.create(pages[i],pages[i],styles);
+        pageArr.push(page);        
+        !function(i){
+            arr[i].addEventListener("tap",function(){
+            	// 让当前页面(i)显示，不是当前页面隐藏
+            	console.log(1111)
+                for(var j=0; j<pageArr.length; j++){                    
+                	if(j!=i) pageArr[j].hide();                    
+                	else pageArr[j].show();
+                }                
+                /* 让新创建的webview，追加合并到当前的窗口上。合并成一个窗口。
+                 * 目的：将父子窗口合并成一个页面，实现同开同关的效果。 避免点击返回安监室，子页面先关闭，而父页面的头部和尾部没有关闭的BUG。
+                 * */
+                slef.append(pageArr[i]);
+            })
+        }(i);
+    }    // 默认触发第0个选项卡的tap事件。
+    mui.trigger(arr[0],"tap");
+});
+</script>
 </body>
 </html>

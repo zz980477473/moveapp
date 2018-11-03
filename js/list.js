@@ -5,7 +5,7 @@ mui.init({
 		id: 'list',
 		styles: {
 			top: '0px',
-			bottom: '50px'
+			bottom: '0px'
 		}
 	}]
 })
